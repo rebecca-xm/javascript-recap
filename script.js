@@ -173,3 +173,55 @@ const testRetirement = untilRetirement(1991, "Rebecca", 65);
 console.log(testRetirement);
 const testRetirement2 = untilRetirement(1953, "Giuseppe", 65);
 console.log(testRetirement2);
+
+//--------------------------------//
+//* INTRODUCTION TO ARRAYS
+
+// The two most important data structures, at least in JavaScript,
+// are arrays and objects.
+
+const pets = ["Pippo", "Ulisse", "Ercole", "Benny"];
+console.log(pets);
+
+const num = new Array(22, 59, 8, 13);
+console.log(num);
+
+// An array can store as many values as we like, of any type.
+
+console.log(pets[0]);
+// Arrays are index based, and the first element of an array
+// is found at index 0.
+
+console.log(pets.length);
+// thanks to the length property, we can get the total number
+// of elements inside of an array.
+
+pets[2] = "Iago";
+console.log(pets);
+
+//* Note: only primitive values are immutable,
+// that's why we were able to change pets value
+// even though it was declared with const.
+
+const ulisse = ["Pipo", 9, "good boy", pets];
+console.log(ulisse);
+
+// Exercise
+function calcAge5(birthYear) {
+  return new Date().getFullYear() - birthYear;
+}
+
+const years = [1991, 1990, 1989, 1988];
+
+const age6 = console.log(calcAge5(years[0]));
+const age7 = console.log(calcAge5(years[1]));
+const age8 = console.log(calcAge5(years[2]));
+const age9 = console.log(calcAge5(years[3]));
+// or
+const lastValue = console.log(calcAge5(years[years.length - 1]));
+// since arrays are index based and index starts from 0
+
+const ages = [calcAge5(years[0]), calcAge5(years[years.length - 1])];
+// we can place function calls into an array,
+// because they will produce a value.
+console.log(ages);
