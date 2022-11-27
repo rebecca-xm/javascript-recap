@@ -145,3 +145,31 @@ function test2(apples, oranges) {
 }
 const testResult = test2(3, 4)
 console.log(testResult)
+
+//--------------------------------//
+
+const calcAge4 = function(birthYear) {
+    return new Date().getFullYear() - birthYear
+}
+
+const retirementYears = function(retAge, currAge) {
+    return retAge - currAge
+}
+
+const untilRetirement = function(birthYear, firstName, retAge) {
+    const age = calcAge4(birthYear)
+    const retirement = retirementYears(retAge, age)
+    if (retirement > 0) {
+        console.log(`${firstName} retires in ${retirement} years.`)
+        return retirement
+    } else {
+        console.log(`${firstName} already retired!`)
+        return -1
+    }
+    // const statement = `${firstName} retires in ${retirement} years.`
+    // return statement
+}
+const testRetirement = untilRetirement(1991, 'Rebecca', 65)
+console.log(testRetirement)
+const testRetirement2 = untilRetirement(1953, 'Giuseppe', 65)
+console.log(testRetirement2)
