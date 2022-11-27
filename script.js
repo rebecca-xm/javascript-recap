@@ -105,3 +105,43 @@ const age5 = moreInfo(1991, 'Rebecca')
 console.log(age5)
 
 //* note: arrow functions do not get the so-called this keyword
+
+//--------------------------------//
+//* FUNCTIONS CALLING OTHER FUNCTIONS
+
+function cutFruitsPieces(fruit) {
+    return fruit * 4
+}
+
+function fruitsProcessor(apples, oranges) {
+    const applePieces = cutFruitsPieces(apples)
+    const orangePieces = cutFruitsPieces(oranges)
+    const juice = `Juice with ${applePieces} apples and ${orangePieces} oranges.`
+    return juice
+}
+const juice = fruitsProcessor(3, 4)
+console.log(juice)
+
+//* data flow: 
+// we call the fruitsProcessor function with the arguments 3 and 4
+// this will then replace the apples parameter in the function with 3
+// and the oranges parameter with 4.
+// the values of these parameters is then used to call cutFruitsPieces.
+// apples and oranges replace the fruit parameter in the function,
+// so the arguments we passed for apples and oranges are now * 4
+// applePieces = 3 * 4 & orangePieces = 4 * 4
+// in the string where we used to have the apples and oranges values,
+// we now use the updated values stored in applePieces and orangePieces.
+
+function cutPieces(fruit, pieces) {
+    return fruit * pieces
+}
+
+function test2(apples, oranges) {
+    const applePieces = cutPieces(apples, 5)
+    const orangePieces = cutPieces(oranges, 9)
+    const juice = `Juice with ${applePieces} apples and ${orangePieces} oranges.`
+    return juice
+}
+const testResult = test2(3, 4)
+console.log(testResult)
