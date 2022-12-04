@@ -49,14 +49,14 @@ console.log(ages);
 //* and continue to the next one.
 //* on the other hand, break completely terminates the whole loop.
 
-console.log('TEST CONTINUE W/ STRING')
+console.log("TEST CONTINUE W/ STRING");
 for (let i = 0; i < about.length; i++) {
   if (typeof about[i] !== "string") continue;
   // everything that's not a string will basically be skipped
   console.log(about[i]);
 }
 
-console.log('TEST CONTINUE W/ NUMBER')
+console.log("TEST CONTINUE W/ NUMBER");
 for (let i = 0; i < about.length; i++) {
   if (typeof about[i] !== "number") continue;
   // everything that's not a number will basically be skipped
@@ -68,4 +68,23 @@ for (let i = 0; i < about.length; i++) {
   if (typeof about[i] === "number") break;
   // loop will be terminated once a number is reached
   console.log(about[i], typeof about[i]);
+}
+
+//* LOOPING BACKWARDS AND LOOPS IN LOOPS
+
+for (let i = about.length - 1; i >= 0; i--) {
+  console.log(about[i]);
+}
+
+// Let's say we have three tasks and we want to repeat each of them
+// five times. That's when a loop inside a loop comes in handy.
+
+for (let task = 1; task <= 3; task++) {
+  console.log(`Starting task n° ${task}`);
+
+  for (let rep = 1; rep <= 5; rep++) {
+    console.log(
+      ` Task n° ${task} repeated ${rep > 1 ? `${rep} times` : `${rep} time`}`
+    );
+  }
 }
