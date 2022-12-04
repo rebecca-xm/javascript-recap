@@ -129,4 +129,4 @@ while (dice !== 6) {
 
 // num !== 6 -> loop due to condition met -> new value
 // if new value !== 6 -> loop due to condition met -> new value
-// and so on till the condition turns true.
+// and so on till the condition turns true. 
