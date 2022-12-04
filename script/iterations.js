@@ -88,3 +88,45 @@ for (let task = 1; task <= 3; task++) {
     );
   }
 }
+
+//* THE WHILE LOOP
+// it's called the while loop because it'll run while the condition is true
+
+// for comparison
+// for (let i = 1; i <= 10; i++) {
+//   console.log(
+//     `This thing has been repeated ${i > 1 ? `${i} times` : `${i} time`}`
+//   );
+// }
+
+//* in the while loop we can only specify a condition,
+// the other two parts will be defined separately.
+
+let i = 1;
+while (i <= 10) {
+  console.log(
+    `This while loop has been repeated ${i > 1 ? `${i} times` : `${i} time`}`
+  );
+  // the counter update is placed at the end of the iteration
+  i++;
+}
+
+// unlike the for loop, the while loop does not really need a counter,
+// all it really needs is the condition.
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice)
+
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`)
+    dice = Math.trunc(Math.random() * 6) + 1;
+    // we reassign the value at the end of each iteration
+    // in order to avoid an infinite loop over the same value
+    if (dice === 6) {
+        console.log('Loop ends here')
+    }
+}
+
+// num !== 6 -> loop due to condition met -> new value
+// if new value !== 6 -> loop due to condition met -> new value
+// and so on till the condition turns true. 
