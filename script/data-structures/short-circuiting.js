@@ -45,4 +45,3 @@ console.log(22 && 'Rebecca') // Rebecca
 // will be false anyway, so there's no need to look at any of the other operands
 
 console.log(22 && 'Rebecca' && null && 'Hi') // null
-
